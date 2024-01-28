@@ -24,11 +24,34 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class StepDefsApp1 extends BaseStepsDefs{
 
+    WebDriver driver;
+    String url = "https://www.google.com";
+    Scenario scenario;
+
+    @Before
+    public void setUp(Scenario scenario){
+        this.scenario = scenario;
+    }
+
+    @AfterStep
+    public void afterEachStep(){
+        // if (scenario.isFailed()){
+
+        // }
+        scenario.attach(Utils.takeScreenShot(driver), "image/png", scenario.getId());
+    }
+
     @Given("I have a browser opened")
     public void i_have_a_browser_opened() {
         // WebDriverManager.chromedriver().setup();
         // driver = new ChromeDriver();
-        driver = BrowserManager.getBrowser(System.getProperty("browsername"));
+
+        // Below two lines says, get the value from Command Line Argument, if not found, use chrome as default
+        String cmdLineArgBrowserName = System.getProperty("browsername");
+        String browserName = cmdLineArgBrowserName==null ? "chrome": cmdLineArgBrowserName;
+
+        driver = BrowserManager.getBrowser(browserName);
+
         scenario.log("Browser Opened.");
         log.debug("Browser Opened.");
 

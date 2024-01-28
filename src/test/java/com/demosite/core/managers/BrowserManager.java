@@ -10,6 +10,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserManager {
 
+    /**
+     * Default is Chrome
+     * @param browsername
+     * @return
+     */
     public static WebDriver getBrowser(String browsername){
         WebDriver driver = null;
         switch (browsername) {
@@ -30,6 +35,8 @@ public class BrowserManager {
                 driver = new InternetExplorerDriver();
                 break;
             default:
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
                 break;
         }
 
