@@ -11,7 +11,7 @@ import io.cucumber.testng.CucumberOptions;
         dryRun = false,
         tags = "",
         plugin = {
-                "html:target/reports/cucumber-html-report.html",
+                "html:target/cucumber-reports/index.html",
                 "json:target/cucumber.json",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         }
