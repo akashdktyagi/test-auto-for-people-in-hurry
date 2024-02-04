@@ -1,0 +1,14 @@
+env:
+  sit:
+    url: https://www.google.com
+    username: test
+    password: test
+  uat:
+    url: https://www.google.com
+    username: test
+    password: test
+  prod:
+    url: https://www.google.com
+    username: test
+    password: test
+    
