@@ -92,13 +92,7 @@ public class StepDefsApp {
             .withFailMessage("Failed because of mismatch in title");
         scenario.log("Driver get title is validated.");
 
-        // if (driver.getTitle().contains(string)){
-        //     scenario.log("Search result is validated.");
-        //     Assertions.assertThat(true).isTrue();
-        // } else {
-        //     scenario.log("Search result is not validated.");
-        //     Assertions.assertThat(false).isTrue();
-        // }
+
     }
 
 }
