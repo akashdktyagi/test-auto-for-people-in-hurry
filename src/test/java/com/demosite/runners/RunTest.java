@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "classpath:features",
         glue = "com.demosite.stepdefs",
         dryRun = false,
-        tags = "",
+        tags = "@t",
         plugin = {
                 "html:target/cucumber-reports/index.html",
                 "json:target/cucumber.json",
@@ -23,3 +23,5 @@ public class RunTest extends AbstractTestNGCucumberTests {
            return super.scenarios();
         }
 }
+
+// mvn clean test -Dcucumber.options.tags="@swaglabs"

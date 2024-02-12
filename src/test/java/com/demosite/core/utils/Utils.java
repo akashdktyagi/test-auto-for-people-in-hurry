@@ -31,4 +31,10 @@ public class Utils {
         }
         return prop;
     }
+
+    public String getProperty(String key){
+        Properties prop = readProperties("config.properties");
+        log.debug(prop.getProperty(key));
+        return prop.getProperty(key);
+    }
 }

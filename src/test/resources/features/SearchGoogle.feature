@@ -1,3 +1,4 @@
+@google
 Feature: As a user, I want to test google search page
 
     Background:

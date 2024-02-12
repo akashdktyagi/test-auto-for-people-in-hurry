@@ -41,18 +41,19 @@ public class StepDefsApp {
         prop = utils.readProperties("config.properties");
     }
 
-    @After
-    public void tearDown(){
-        driver.quit();
-    }
+    // @After
+    // public void tearDown(){
+    //     driver.quit();
+    // }
 
-    @AfterStep
-    public void afterEachStep(){
-        // if (scenario.isFailed()){
+    
+    // @AfterStep
+    // public void afterEachStep(){
+    //     // if (scenario.isFailed()){
 
-        // }
-        scenario.attach(Utils.takeScreenShot(driver), "image/png", scenario.getId());
-    }
+    //     // }
+    //     scenario.attach(Utils.takeScreenShot(driver), "image/png", scenario.getId());
+    // }
 
     @Given("I have a browser opened")
     public void i_have_a_browser_opened() {
