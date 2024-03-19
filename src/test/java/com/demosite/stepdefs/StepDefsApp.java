@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.v119.browser.Browser;
 import org.testng.asserts.Assertion;
 
+import com.demosite.context.ScnContext;
 import com.demosite.core.managers.BrowserManager;
 import com.demosite.core.utils.Utils;
 import com.demosite.pageobjects.LandingPage;
@@ -32,7 +33,8 @@ public class StepDefsApp {
     Properties prop;
     WebDriver  driver;
     Scenario scenario;
-
+    ScnContext scnContext = new ScnContext();
+s
     @Before
     public void setUp(Scenario scenario){
         this.scenario = scenario;
@@ -41,19 +43,9 @@ public class StepDefsApp {
         prop = utils.readProperties("config.properties");
     }
 
-    // @After
-    // public void tearDown(){
-    //     driver.quit();
-    // }
-
-    
-    // @AfterStep
-    // public void afterEachStep(){
-    //     // if (scenario.isFailed()){
-
-    //     // }
-    //     scenario.attach(Utils.takeScreenShot(driver), "image/png", scenario.getId());
-    // }
+    public StepDefsApp(ScnContext scnContext){
+        this.scnContext = scnContext;
+    }
 
     @Given("I have a browser opened")
     public void i_have_a_browser_opened() {
@@ -92,8 +84,5 @@ public class StepDefsApp {
             .contains(string)
             .withFailMessage("Failed because of mismatch in title");
         scenario.log("Driver get title is validated.");
-
-
     }
-
 }

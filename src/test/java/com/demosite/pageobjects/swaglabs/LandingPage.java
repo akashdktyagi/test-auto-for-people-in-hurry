@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LandingPage {
+import com.demosite.core.interactions.Interact;
+
+public class LandingPage extends Interact{
     WebDriver driver;
 
     @FindBy(id = "inventory_container")
@@ -16,7 +18,11 @@ public class LandingPage {
         PageFactory.initElements(driver, this);
     }
 
+    // public boolean isProductsListDisplayed(){
+    //     return productsList.isDisplayed();
+    // }
+
     public boolean isProductsListDisplayed(){
-        return productsList.isDisplayed();
+        return validateElementIsDisplayed(productsList);
     }
 }

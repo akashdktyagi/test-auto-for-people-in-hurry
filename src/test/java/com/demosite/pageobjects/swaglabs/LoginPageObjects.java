@@ -7,7 +7,9 @@ import org.openqa.selenium.devtools.v119.page.Page;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPageObjects {
+import com.demosite.core.interactions.Interact;
+
+public class LoginPageObjects extends Interact {
     
     WebDriver driver;
 
@@ -27,7 +29,8 @@ public class LoginPageObjects {
     }
 
     public void enterUsername(String u){
-        username.sendKeys(u);
+        // username.sendKeys(u);
+        setElement(loginBtn, u);
     }
 
     public void enterPassword(String p){
@@ -35,6 +38,7 @@ public class LoginPageObjects {
     }
 
     public void clickLoginButton(){
+        //wait
         loginBtn.click();
     }
 

@@ -7,6 +7,7 @@ import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.model.Log;
+import com.demosite.context.ScnContext;
 import com.demosite.core.managers.BrowserManager;
 import com.demosite.core.utils.Utils;
 import com.demosite.pageobjects.swaglabs.LandingPage;
@@ -25,6 +26,12 @@ public class LoginSwaglabs {
     Utils utils = new Utils();
     LoginPageObjects loginPage;
     LandingPage landingPage;
+
+    ScnContext scnContext;
+
+    public LoginSwaglabs(ScnContext scnContext){
+        this.scnContext = scnContext;
+    }
 
     @Before
     public void setUp(){
